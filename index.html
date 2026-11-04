@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RAF Montages Vidéo | Reels, pubs et motion design</title>
+<meta name="description" content="Montage de Reels, pubs produit et motion design pour les coachs, les boutiques et les marques. Avant/après, 7 styles et 27 vidéos à voir.">
+<meta name="theme-color" content="#0B0B0F">
+<meta property="og:title" content="RAF Montages Vidéo">
+<meta property="og:description" content="Ta vidéo a 2 secondes pour arrêter le pouce. Montage de Reels, pubs produit et motion design.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://azizrafrafi1.github.io/raf/">
+<meta property="og:image" content="https://azizrafrafi1.github.io/raf/brand/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://azizrafrafi1.github.io/raf/">
+<link rel="icon" href="brand/raf-mark.svg" type="image/svg+xml">
+<link rel="icon" href="brand/favicon-96.png" sizes="96x96" type="image/png">
+<link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
+<link rel="preload" href="fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <img class="loader__mark" src="brand/raf-mark.svg" alt="" width="88" height="88">
+  <div class="loader__tc" id="loaderTc">00:00:00:00</div>
+  <div class="loader__bar"><i id="loaderBar"></i></div>
+</div>
+
+<header class="top" id="top">
+  <a class="top__brand" href="#hook" aria-label="RAF Montages Vidéo, retour en haut"><img src="brand/raf-horizontal.svg" alt="" width="85" height="38"></a>
+  <nav class="top__nav" aria-label="Navigation">
+    <a href="#avant-apres">Avant / Après</a>
+    <a href="#travaux">Travaux</a>
+    <a href="#offres">Offres</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="top__tc" id="tc" aria-hidden="true"><i></i><span>00:00:00:00</span></div>
+  <div class="top__links" id="topLinks"></div>
+</header>
+
+<aside class="rail" id="rail" aria-hidden="true"><div class="rail__ticks" id="railTicks"></div><i class="rail__head" id="railHead"></i></aside>
+<div class="progress" aria-hidden="true"><i id="progress"></i></div>
+
+<main>
+
+<!-- V1 HOOK -->
+<section class="hero" id="hook" data-track="HOOK">
+  <div class="wall" id="wall" aria-hidden="true"></div>
+  <div class="hero__shade"></div>
+  <div class="hero__copy">
+    <p class="tag"><span data-site="brand">RAF Montages Vidéo</span> · <span data-site="role">Production &amp; édition pro</span></p>
+    <h1 class="hero__title" aria-label="Ta vidéo a 2 secondes pour arrêter le pouce.">
+      <span class="ln"><span>TA VIDÉO A</span></span>
+      <span class="ln ln--hot"><span>2 SECONDES</span></span>
+      <span class="ln"><span>POUR ARRÊTER</span></span>
+      <span class="ln"><span>LE POUCE.</span></span>
+    </h1>
+    <p class="hero__lead">Montage de Reels, pubs produit et motion design pour les coachs, les boutiques et les marques.</p>
+    <div class="hero__cta">
+      <a class="btn btn--hot" href="#showreel">Voir le showreel</a>
+      <a class="btn" href="#echantillon">10 secondes gratuites</a>
+    </div>
+  </div>
+</section>
+
+<section class="names" aria-label="Projets du portfolio">
+  <div class="names__track" id="names"></div>
+</section>
+
+<!-- V2 SHOWREEL -->
+<section class="reel" id="showreel" data-track="SHOWREEL">
+  <div class="reel__stage">
+    <div class="reel__side reel__side--l">
+      <p class="tag">Showreel 2026</p>
+      <h2 class="h2">35 SECONDES.<br>7 STYLES.</h2>
+      <p class="body">Le plus rapide pour voir ce que je fais. Mets le son.</p>
+    </div>
+    <div class="phone reel__phone" id="reelPhone" data-cursor="SON">
+      <video id="reelVideo" playsinline muted loop preload="none"></video>
+      <button class="sound" id="reelSound" type="button" aria-pressed="false">Son : off</button>
+    </div>
+    <dl class="reel__side reel__side--r stats">
+      <div><dt data-count="0" data-videos>0</dt><dd>vidéos dans ce portfolio</dd></div>
+      <div><dt data-count="7">0</dt><dd>styles différents</dd></div>
+      <div><dt data-count="4">0</dt><dd>langues : darija, arabe, français, anglais</dd></div>
+      <div><dt data-count="470" data-suffix=" K+">0</dt><dd>abonnés cumulés sur 6 pages du portfolio</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- V3 AVANT / APRES -->
+<section class="cmp" id="avant-apres" data-track="AVANT / APRÈS">
+  <div class="wrap">
+    <div class="cmp__grid">
+      <header class="head cmp__head">
+        <p class="tag">Avant / Après</p>
+        <h2 class="h2">GLISSE LA BARRE.</h2>
+        <p class="body">À gauche, la vidéo de départ. À droite, le montage. Même moment, même voix.</p>
+      </header>
+      <div class="phone cmp__device" id="cmpDevice">
+        <video id="cmpBefore" playsinline muted loop preload="none"></video>
+        <video id="cmpAfter" playsinline muted loop preload="none"></video>
+        <span class="cmp__lab cmp__lab--l">AVANT</span>
+        <span class="cmp__lab cmp__lab--r">APRÈS</span>
+        <i class="cmp__line"><b></b></i>
+        <input class="cmp__range" id="cmpRange" type="range" min="0" max="100" value="50" aria-label="Comparer avant et après">
+      </div>
+      <div class="cmp__info">
+        <div class="cmp__tabs" id="cmpTabs" role="tablist" aria-label="Choisir un projet"></div>
+        <div id="cmpText"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- V4 STYLES -->
+<section class="styles" id="styles" data-track="STYLES">
+  <div class="styles__pin">
+    <div class="styles__track" id="stylesTrack"></div>
+  </div>
+</section>
+
+<!-- V5 TRAVAUX -->
+<section class="work" id="travaux" data-track="TRAVAUX">
+  <div class="wrap">
+    <header class="head">
+      <p class="tag">Travaux</p>
+      <h2 class="h2">TOUT LE TRAVAIL.</h2>
+      <p class="body">Classé par secteur. Sous chaque vidéo : le point de départ, le montage et ce qui a été livré.</p>
+    </header>
+    <div class="chips" id="chips" role="group" aria-label="Filtrer par secteur"></div>
+    <div class="grid" id="grid"></div>
+    <button class="btn more" id="more" type="button">Voir tous les projets</button>
+  </div>
+</section>
+
+<!-- V6 METHODE -->
+<section class="method" id="methode" data-track="MÉTHODE">
+  <div class="wrap">
+    <header class="head">
+      <p class="tag">Méthode</p>
+      <h2 class="h2">COMMENT ÇA SE PASSE.</h2>
+    </header>
+    <div class="tl" id="tl">
+      <i class="tl__head" id="tlHead"></i>
+      <article class="tl__clip"><span>01</span><h3>Brief</h3><p>Tu m'envoies ta vidéo, ton objectif et ta page. Un téléphone suffit pour filmer.</p></article>
+      <article class="tl__clip"><span>02</span><h3>Hook et structure</h3><p>Je choisis le meilleur début et le style qui colle à ta marque.</p></article>
+      <article class="tl__clip"><span>03</span><h3>Montage</h3><p>Voix nettoyée, sous-titres, motion design, sons et musique.</p></article>
+      <article class="tl__clip"><span>04</span><h3>Livraison</h3><p>Tu reçois le fichier prêt à poster, tu fais tes retours, je corrige.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- V7 OFFRES -->
+<section class="offers" id="offres" data-track="OFFRES">
+  <div class="wrap">
+    <header class="head">
+      <p class="tag">Offres</p>
+      <h2 class="h2">CHOISIS TON FORMAT.</h2>
+    </header>
+    <div class="offers__grid" id="offers"></div>
+
+    <div class="sample" id="echantillon">
+      <h3 class="sample__title">ENVOIE UNE VIDÉO.<br><em>10 SECONDES GRATUITES.</em></h3>
+      <p class="body">Je monte 10 secondes de ta vidéo dans ton style. Tu vois le résultat avant de décider.</p>
+      <a class="btn btn--hot" data-wa="Salut ! Je veux mon échantillon gratuit de 10 secondes." href="#contact">Demander mon échantillon</a>
+    </div>
+
+    <form class="builder" id="builder">
+      <h3 class="h3">PRÉPARE TA DEMANDE</h3>
+      <fieldset><legend>Ce que tu veux</legend><div class="opts" data-name="type"></div></fieldset>
+      <fieldset><legend>Combien</legend><div class="opts" data-name="count"></div></fieldset>
+      <fieldset><legend>Ton secteur</legend><div class="opts" data-name="sector"></div></fieldset>
+      <output class="builder__msg" id="builderMsg"></output>
+      <a class="btn btn--hot" id="builderSend" href="#contact" target="_blank" rel="noopener">Envoyer sur WhatsApp</a>
+    </form>
+  </div>
+</section>
+
+<!-- V8 FAQ -->
+<section class="faq" id="faq" data-track="FAQ">
+  <div class="wrap faq__grid">
+    <header class="head">
+      <p class="tag">FAQ</p>
+      <h2 class="h2">QUESTIONS.</h2>
+    </header>
+    <div>
+      <details><summary>Je dois filmer avec une caméra pro ?</summary><p>Non. Un téléphone suffit. J'ai déjà transformé une vidéo WhatsApp en 352×624 en pub propre en 1080×1920.</p></details>
+      <details><summary>Ma vidéo a déjà des sous-titres et des stickers. C'est un problème ?</summary><p>Non. Je les couvre ou je les efface, puis je refais le montage. La plupart des projets du portfolio sont partis de vidéos déjà montées.</p></details>
+      <details><summary>Tu travailles dans quelles langues ?</summary><p>Darija tunisienne, arabe, français et anglais, avec des sous-titres mot à mot.</p></details>
+      <details><summary>Et la musique, je risque un problème de droits ?</summary><p>Les musiques de mes montages sont composées sur mesure, et les sons viennent de banques libres pour un usage commercial.</p></details>
+      <details><summary>Tu peux m'aider pour le script et le hook ?</summary><p>Oui. Je peux proposer plusieurs débuts, écrire la caption et choisir les 5 hashtags.</p></details>
+      <details><summary>Tu peux garder mon style actuel ?</summary><p>Oui. Je peux reprendre tes couleurs et ton logo, ou créer un style qui n'appartient qu'à ta marque.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- END CARD -->
+<section class="end" id="contact" data-track="CARTE DE FIN">
+  <p class="tag">Carte de fin</p>
+  <p class="end__ask">TON PROCHAIN REEL ?</p>
+  <div class="end__line"><i id="endLine"></i></div>
+  <div class="end__grid">
+    <h2 class="end__logo"><img src="brand/raf-lockup.svg" alt="RAF Montages Vidéo, production et édition pro" width="1000" height="1466"></h2>
+    <div>
+      <p class="end__lead">Parle-moi de ta vidéo.</p>
+      <div class="end__links" id="endLinks"></div>
+    </div>
+  </div>
+  <p class="end__note">Les vidéos sont montrées avec l'accord des personnes concernées.</p>
+</section>
+
+</main>
+
+<dialog class="box" id="box" aria-label="Fiche projet">
+  <button class="box__close" id="boxClose" type="button" aria-label="Fermer">×</button>
+  <div class="box__grid">
+    <div class="box__media">
+      <video id="boxVideo" controls playsinline preload="metadata"></video>
+      <div class="box__switch" id="boxSwitch" role="group" aria-label="Choisir la version">
+        <button type="button" data-v="after" aria-pressed="true">Après</button>
+        <button type="button" data-v="before" aria-pressed="false">Avant</button>
+      </div>
+    </div>
+    <div class="box__text" id="boxText"></div>
+  </div>
+</dialog>
+
+<div class="cursor" id="cursor" aria-hidden="true"><span></span></div>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>

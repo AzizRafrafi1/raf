@@ -94,7 +94,13 @@
   $("#cmpTabs").innerHTML = CMP.map((id) => `<button type="button" role="tab" data-id="${id}" aria-selected="false">${esc(byId(id).person)}</button>`).join("");
   $("#cmpTabs").addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) loadCmp(b.dataset.id); });
   range.addEventListener("input", () => setX(range.value));
-  setInterval(() => { if (cmpOn && Math.abs(before.currentTime - after.currentTime) > 0.12 && after.currentTime < before.duration) before.currentTime = after.currentTime; }, 500);
+  const drag = (e) => {
+    const b = device.getBoundingClientRect(), v = Math.max(0, Math.min(100, ((e.clientX - b.left) / b.width) * 100));
+    range.value = v; setX(v);
+  };
+  device.addEventListener("pointerdown", (e) => { device.setPointerCapture(e.pointerId); if (e.pointerType === "mouse") drag(e); });
+  device.addEventListener("pointermove", (e) => { if (device.hasPointerCapture(e.pointerId)) drag(e); });
+  setInterval(() => { if (cmpOn && Math.abs(before.currentTime - after.currentTime) > 0.3 && after.currentTime < before.duration) before.currentTime = after.currentTime; }, 1000);
   after.addEventListener("ended", () => { before.currentTime = 0; });
   new IntersectionObserver(([e]) => {
     cmpOn = e.isIntersecting;
@@ -116,7 +122,7 @@
   $("#stylesTrack").innerHTML = STYLES.map((s, i) => `
     <article class="style" style="--bg:${s.bg};--fg:${s.fg};--ac:${s.ac}">
       <div>
-        <p class="style__n">STYLE ${String(i + 1).padStart(2, "0")} / ${String(STYLES.length).padStart(2, "0")}</p>
+        <p class="style__n">STYLE ${String(i + 1).padStart(2, "0")} / ${String(STYLES.length).padStart(2, "0")}${i < STYLES.length - 1 ? '<span class="style__swipe">Glisse ›</span>' : ""}</p>
         <h3 class="style__name">${s.name}</h3>
         <p class="style__txt">${s.txt}</p>
         <p class="style__for">Pour : ${s.who}</p>
@@ -196,10 +202,11 @@
   const box = $("#box"), boxVideo = $("#boxVideo"), boxSwitch = $("#boxSwitch");
   let boxId = null;
   const setVersion = (v) => {
-    const t = boxVideo.currentTime;
+    const t = byId(boxId).sync ? boxVideo.currentTime : 0;
     boxVideo.src = url(boxId, `${v}.mp4`);
     boxVideo.poster = url(boxId, "poster.jpg");
-    boxVideo.addEventListener("loadedmetadata", () => { if (t) boxVideo.currentTime = Math.min(t, boxVideo.duration - 0.1); boxVideo.play().catch(() => {}); }, { once: true });
+    boxVideo.addEventListener("loadedmetadata", () => { if (t) boxVideo.currentTime = Math.min(t, boxVideo.duration - 0.1); }, { once: true });
+    boxVideo.play().catch(() => {}); // inside the tap, so a phone lets the sound play
     $$("button", boxSwitch).forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.v === v)));
   };
   const open = (id) => {
@@ -211,6 +218,8 @@
     $("#boxText").innerHTML = `<h3 class="case__title">${esc(p.title)}</h3>${who(p)}${pills(p)}${blocks(lead)}
       <a class="btn btn--hot" style="margin-top:20px" href="${wa(`Salut ! J'ai vu « ${p.title} » et je veux la même chose.`)}" target="_blank" rel="noopener">Je veux ça pour ma page</a>`;
     box.showModal();
+    box.scrollTop = 0;
+    box.focus(); // otherwise a phone draws the focus ring on the close button
     lenis?.stop();
   };
   const close = () => { boxVideo.pause(); boxVideo.removeAttribute("src"); boxVideo.load(); lenis?.start(); };
@@ -391,7 +400,7 @@
     // the end card plays like the end of a reel
     gsap.from("#endLine", { scaleX: 0, duration: 0.8, ease: "power3.inOut", scrollTrigger: { trigger: "#contact", start: "top 60%" } });
     gsap.from(".end__logo img", { scale: 1.12, opacity: 0, duration: 0.6, delay: 0.25, ease: "power4.out", scrollTrigger: { trigger: "#contact", start: "top 60%" } });
-    gsap.from(".reach", { x: 26, opacity: 0, duration: 0.45, delay: 0.35, stagger: 0.07, ease: "power3.out", scrollTrigger: { trigger: "#contact", start: "top 60%" } });
+    gsap.from(".reach", { y: 18, opacity: 0, duration: 0.45, delay: 0.35, stagger: 0.07, ease: "power3.out", scrollTrigger: { trigger: "#contact", start: "top 60%" } });
 
     addEventListener("load", () => { ScrollTrigger.refresh(); layoutRail(); });
     ScrollTrigger.addEventListener("refresh", () => { layoutRail(); onScroll(); });

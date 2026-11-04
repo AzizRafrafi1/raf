@@ -215,8 +215,11 @@
 
 </main>
 
-<dialog class="box" id="box" aria-label="Fiche projet">
-  <button class="box__close" id="boxClose" type="button" aria-label="Fermer">×</button>
+<dialog class="box" id="box" aria-label="Fiche projet" tabindex="-1" data-lenis-prevent>
+  <div class="box__bar">
+    <img src="brand/raf-horizontal.svg" alt="" width="67" height="30">
+    <button class="box__close" id="boxClose" type="button" aria-label="Fermer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg></button>
+  </div>
   <div class="box__grid">
     <div class="box__media">
       <video id="boxVideo" controls playsinline preload="metadata"></video>

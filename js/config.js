@@ -7,6 +7,12 @@ window.SITE = {
   instagram: "aziz_rafrafiii",      // sans le @
   email: "azizrafrafi506@gmail.com",
   media: "media",
+  tools: [                         // logiciels sous « Méthode » : enlève ou ajoute une ligne
+    { short: "Pr", name: "Premiere Pro", role: "Montage et son", bg: "#00005B", fg: "#9999FF" },
+    { short: "Ae", name: "After Effects", role: "Motion design et effets", bg: "#00005B", fg: "#9999FF" },
+    { short: "Ps", name: "Photoshop", role: "Miniatures et retouches", bg: "#001E36", fg: "#31A8FF" },
+    { short: "Ai", name: "Illustrator", role: "Logos et éléments vectoriels", bg: "#330000", fg: "#FF9A00" },
+  ],
   prices: {                        // laisse vide pour afficher « Prix sur demande »
     "reel-test": "",
     "pub": "",

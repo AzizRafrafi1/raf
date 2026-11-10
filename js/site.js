@@ -229,6 +229,11 @@
   box.addEventListener("click", (e) => { if (e.target === box) box.close(); });
   box.addEventListener("close", close);
 
+  // ---------- tools ----------
+  const tools = S.tools || [];
+  $("#toolsBlock").hidden = !tools.length;
+  $("#tools").innerHTML = tools.map((t) => `<li class="tool" style="--tb:${t.bg};--tf:${t.fg}"><span class="tool__ico" aria-hidden="true">${esc(t.short)}</span><span class="tool__txt"><b>${esc(t.name)}</b><em>${esc(t.role)}</em></span></li>`).join("");
+
   // ---------- offers ----------
   const OFFERS = [
     { id: "pub", for: "E-commerce", name: "PUB QUI VEND", top: true, items: ["1 pub produit jusqu'à 60 s", "3 débuts différents à tester", "Bénéfices montrés comme des preuves", "Appel à la commande clair"] },
@@ -395,6 +400,7 @@
     });
 
     gsap.from(".tl__clip", { y: 30, opacity: 0, duration: 0.5, stagger: 0.09, ease: "power3.out", scrollTrigger: { trigger: "#tl", start: "top 82%" } });
+    gsap.from(".tool", { y: 24, opacity: 0, duration: 0.45, stagger: 0.07, ease: "power3.out", scrollTrigger: { trigger: "#tools", start: "top 88%" } });
     gsap.from(".offer", { y: 30, opacity: 0, duration: 0.5, stagger: 0.06, ease: "power3.out", scrollTrigger: { trigger: "#offers", start: "top 82%" } });
 
     // the end card plays like the end of a reel
